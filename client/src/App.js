@@ -7,9 +7,8 @@ import Home from './pages/Home';
 
 export default function App() {
   return (
-    <div className="App">
-    <h1>Hello world</h1>
-    <div>
+    <div className="text-xl font-bold">
+      <div>
     <Navbar />
     <Routes>
       <Route path='/'  element={<Home />} />
