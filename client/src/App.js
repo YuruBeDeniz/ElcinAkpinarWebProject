@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import { Footer } from "./components";
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
+import LoginPopup from './components/LoginPopup';
+import SignUpPopup from './components/SignUpPopup';
 
 export default function App() {
   return (
@@ -14,6 +16,8 @@ export default function App() {
         <Routes>
           <Route path='/'  element={<Home />} />
           <Route path='/aboutme'  element={<AboutMe />} />
+          <Route path='/login' element={<LoginPopup />} />
+          <Route path='/signup' element={<SignUpPopup />} />
         </Routes>
         <Footer />
       </div>
