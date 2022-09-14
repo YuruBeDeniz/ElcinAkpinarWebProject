@@ -14,6 +14,8 @@ export function Footer() {
             <a
               href="https://www.facebook.com/sagavanga8"
               type="button"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
               <svg
@@ -36,6 +38,8 @@ export function Footer() {
             <a
               href="https://open.spotify.com/artist/2GT3hjgaWBFSTJsSZLzPYr?si=_Ue_EwGwSlyqILda8wEjMA&utm_source=copy-link"
               type="button"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
               <svg
@@ -57,6 +61,8 @@ export function Footer() {
             <a
               href="https://twitter.com/nicle_elcin"
               type="button"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
               <svg
@@ -79,6 +85,8 @@ export function Footer() {
             <a
               href="#!"
               type="button"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
               <svg
@@ -101,12 +109,14 @@ export function Footer() {
             <a
               href="#!"
               type="button"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
-                class="bi bi-envelope"
+                className="bi bi-envelope"
                 className="w-4 h-full mx-auto"
                 viewBox="0 0 16 16"
               >
@@ -117,6 +127,8 @@ export function Footer() {
             <a
               href="https://www.linkedin.com/in/elcin-akpinar-6201821b5/"
               type="button"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
               <svg
@@ -146,11 +158,15 @@ export function Footer() {
           <a
             className="text-blue-600/50 hover:text-blue-600"
             href="https://www.linkedin.com/in/dilara-deniz-saganak-45190b146/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Deniz Saganak&nbsp;
           </a>
           <span>& &nbsp;</span>
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-600/50 hover:text-blue-600"
             href="https://thusspokedata.com"
           >
