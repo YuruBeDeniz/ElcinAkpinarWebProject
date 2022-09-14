@@ -85,7 +85,7 @@ export function Footer() {
             </a>
             {/* ------------------------------- INSTAGRAM ---------------------------- */}
             <a
-              href="#!"
+              href="https://instagram.com/suoxi.e/"
               type="button"
               target="_blank"
               rel="noopener noreferrer"

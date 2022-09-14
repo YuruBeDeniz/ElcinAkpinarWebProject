@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-// import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet";
 import axios from "axios";
 // import { response } from "express";
 // import { ShowGallery } from "./ShowGallery";
 import Swal from "sweetalert2";
 
 export function AddPicture() {
-  const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [setErrorMessage] = useState("");
 
@@ -24,7 +23,6 @@ export function AddPicture() {
       .then((data) => {
         console.log(data.url);
         const requestBody = {
-          title,
           imgUrl: data.url,
         };
         if (data.url.length > 1) {
@@ -37,7 +35,7 @@ export function AddPicture() {
                   icon: "success",
                   title: "The picture has been saved",
                   showConfirmButton: false,
-                  timer: 1000,
+                  timer: 500,
                 });
               }
             });
@@ -47,38 +45,16 @@ export function AddPicture() {
         const errorDescription = err.response.data.message;
         setErrorMessage(errorDescription);
       });
-    setTitle("");
     setImage("");
   };
 
   return (
     <>
+      <Helmet>
+        <title>Elçin Akpınar</title>
+      </Helmet>
       <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto mt-6">
         <form>
-          <div className="form-group mb-6">
-            <input
-              type="text"
-              className="form-control block
-                w-full
-                px-3
-                py-1.5
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleInput7"
-              name="title"
-              value={title}
-              placeholder="Name"
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </div>
           <div className="form-group mb-6">
             <input
               type="file"

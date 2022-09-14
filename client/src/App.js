@@ -2,12 +2,11 @@ import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Footer } from "./components";
 import Home from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
 import LoginPopup from "./components/LoginPopup";
 import SignUpPopup from "./components/SignUpPopup";
-import { ShowGallery, AddPicture } from "./components";
+import { ShowGallery, AddPicture, Footer } from "./components";
 
 export default function App() {
   return (
