@@ -6,7 +6,6 @@ const concertSchema = new Schema(
       type: String,
     },
     imgUrl: String,
-    require: true,
   },
   {
     timestamps: true,
