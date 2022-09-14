@@ -4,9 +4,9 @@ const concertSchema = new Schema(
   {
     title: {
       type: String,
-      require: true,
     },
-    imageUrl: String,
+    imgUrl: String,
+    require: true,
   },
   {
     timestamps: true,

@@ -22,21 +22,26 @@ export function AddPicture() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data.url);
         const requestBody = {
           title,
-          imageUrl: data.url,
+          imgUrl: data.url,
         };
-        axios.post("/api/gallery/add-picture", requestBody).then((response) => {
-          console.log(response);
-          if (response) {
-            Swal.fire({
-              icon: "success",
-              title: "The picture has been saved",
-              showConfirmButton: false,
-              timer: 1000,
+        if (data.url.length > 1) {
+          axios
+            .post("/api/gallery/add-picture", requestBody)
+            .then((response) => {
+              console.log(response);
+              if (response) {
+                Swal.fire({
+                  icon: "success",
+                  title: "The picture has been saved",
+                  showConfirmButton: false,
+                  timer: 1000,
+                });
+              }
             });
-          }
-        });
+        }
       })
       .catch((err) => {
         const errorDescription = err.response.data.message;
@@ -48,7 +53,7 @@ export function AddPicture() {
 
   return (
     <>
-      <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md">
+      <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto mt-6">
         <form>
           <div className="form-group mb-6">
             <input
@@ -103,7 +108,7 @@ export function AddPicture() {
             w-full
             px-6
             py-2.5
-            bg-blue-600
+            bg-gray-900
             text-white
             font-medium
             text-xs
@@ -111,9 +116,10 @@ export function AddPicture() {
             uppercase
             rounded
             shadow-md
-            hover:bg-blue-700 hover:shadow-lg
-            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-            active:bg-blue-800 active:shadow-lg
+            hover:bg-gray-700 hover:shadow-lg
+            focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0
+            active:bg-gray-800 active:shadow-lg
+           
             transition
             duration-150
             ease-in-out"
