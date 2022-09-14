@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../context/auth";
 
 export function Footer() {
+  const { isLoggedIn, logoutUser } = useContext(AuthContext);
   return (
     <div>
       <footer
@@ -116,7 +118,7 @@ export function Footer() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
-                className="bi bi-envelope"
+                data-icon="bi bi-envelope"
                 className="w-4 h-full mx-auto"
                 viewBox="0 0 16 16"
               >
@@ -149,29 +151,76 @@ export function Footer() {
             </a>
           </div>
         </div>
-
-        <div
-          className="text-center font-light text-lg p-3 text-gray-600 "
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-        >
-          © 2022 Copyright:&nbsp;
-          <a
-            className="text-blue-600/50 hover:text-blue-600"
-            href="https://www.linkedin.com/in/dilara-deniz-saganak-45190b146/"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="flex flex-col">
+          <div
+            className="text-center font-light text-lg p-3 text-gray-600"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
           >
-            Deniz Saganak&nbsp;
-          </a>
-          <span>& &nbsp;</span>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600/50 hover:text-blue-600"
-            href="https://thusspokedata.com"
-          >
-            Thusspokedata&nbsp;
-          </a>
+            © 2022 Copyright:&nbsp;
+            <a
+              className="text-blue-600/50 hover:text-blue-600"
+              href="https://www.linkedin.com/in/dilara-deniz-saganak-45190b146/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Deniz Saganak&nbsp;
+            </a>
+            <span>& &nbsp;</span>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600/50 hover:text-blue-600"
+              href="https://thusspokedata.com"
+            >
+              Thusspokedata&nbsp;
+            </a>
+            {isLoggedIn ? (
+              <span>
+                <a href="/">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="red"
+                    className="bi bi-box-arrow-in-right mx-auto"
+                    viewBox="0 0 16 16"
+                    onClick={logoutUser}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                    />
+                    <path
+                      fillRule="evenodd"
+                      d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                    />
+                  </svg>
+                </a>
+              </span>
+            ) : (
+              <span>
+                <a href="/login">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-box-arrow-in-right mx-auto"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                    />
+                    <path
+                      fillRule="evenodd"
+                      d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                    />
+                  </svg>
+                </a>
+              </span>
+            )}
+          </div>
         </div>
       </footer>
     </div>
