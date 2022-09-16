@@ -10,9 +10,11 @@ export function AddPicture() {
   const [setErrorMessage] = useState("");
 
   const handleSubmit = (e) => {
+    console.log("esto es EEEEEEE:", image);
     e.preventDefault();
     const data = new FormData();
     data.append("file", image);
+    console.log("ESTO ES DATATA:", data);
     data.append("upload_preset", "elcinTurca");
     data.append("cloud_name", "thusspokedata");
     fetch("https://api.cloudinary.com/v1_1/thusspokedata/image/upload", {
@@ -21,15 +23,15 @@ export function AddPicture() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.url);
+        console.log(data);
         const requestBody = {
+          publicId: data.public_id,
           imgUrl: data.url,
         };
         if (data.url.length > 1) {
           axios
             .post("/api/gallery/add-picture", requestBody)
             .then((response) => {
-              console.log(response);
               if (response) {
                 Swal.fire({
                   icon: "success",
