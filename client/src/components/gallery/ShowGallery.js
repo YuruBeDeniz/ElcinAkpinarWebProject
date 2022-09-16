@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Helmet } from "react-helmet";
 import axios from "axios";
+import { AuthContext } from "../../context/auth";
+import { DeletePicture } from "./DeletePicture";
 
 export function ShowGallery() {
+  const { isLoggedIn, logoutUser } = useContext(AuthContext);
+
   const [gallery, setGallery] = useState([]);
 
   useEffect(() => {
@@ -19,7 +23,7 @@ export function ShowGallery() {
         <title>Elçin Akpınar | Gallery</title>
       </Helmet>
       {gallery ? (
-        <section className="overflow-hidden text-gray-700 ">
+        <section className="overflow-hidden text-gray-700 mb-32">
           <div className="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
             <div className="flex flex-wrap -m-1 md:-m-2">
               {gallery.map((item) => (
@@ -31,6 +35,7 @@ export function ShowGallery() {
                       src={item.imgUrl}
                     />
                   </div>
+                  {isLoggedIn ? <DeletePicture id={item._id} /> : ""}
                 </div>
               ))}
             </div>
