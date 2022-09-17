@@ -1,17 +1,18 @@
 const { Schema, model } = require("mongoose");
 
-const concertSchema = new Schema(
+const gallerySchema = new Schema(
   {
     title: {
       type: String,
     },
     imgUrl: String,
+    publicId: String,
   },
   {
     timestamps: true,
   }
 );
 
-const Concert = model("Concert", concertSchema);
+const Gallery = model("Gallery", gallerySchema);
 
-module.exports = Concert;
+module.exports = Gallery;
