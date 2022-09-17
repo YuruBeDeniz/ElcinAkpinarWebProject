@@ -25,6 +25,9 @@ app.use("/api/gallery", gallery);
 const auth = require("./routes/auth");
 app.use("/api/auth", auth);
 
+/* const aboutMe = require("./routes/aboutMe");
+app.use("/api/aboutme", aboutMe); */
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
