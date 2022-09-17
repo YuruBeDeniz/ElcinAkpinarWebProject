@@ -15,6 +15,7 @@ export default function SignUpPopup() {
       const requestBody = {password, name, email}
       axios.post('/api/auth/signup', requestBody)
       .then(response => {
+        //console.log('response from backend: ', response)
         navigate('/login');
       })
       .catch(err => {

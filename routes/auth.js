@@ -6,6 +6,7 @@ const saltRounds = 10;
 const { isAuthenticated } = require('../middlewares/jwt'); 
 
 router.post('/signup', (req, res, next) => {
+    //console.log('signup req.body: ', req.body)
     const {email, password, name} = req.body
     if (email === '' || password === '' || name === '') {
 		res.status(400).json({ message: 'Provide email, password and name' })
@@ -29,6 +30,7 @@ router.post('/signup', (req, res, next) => {
                        .then(createdUser => {
                         const {email, name, _id} = createdUser;
                         const user = { email, name, _id};
+                        //console.log('response control: ', res)
                         res.status(201).json({user: user})
                        })
                        .catch(err => {

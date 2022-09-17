@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const aboutMeSchema = new Schema(
   {
-    body: {
+    textBody: {
       type: String
     }
   }
