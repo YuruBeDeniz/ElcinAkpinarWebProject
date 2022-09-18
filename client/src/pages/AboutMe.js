@@ -57,7 +57,7 @@ export default function AboutMe() {
   const handleSubmit = e => {
     e.preventDefault();
     const requestBody = {aboutMe}
-    axios.post('/api/aboutme', requestBody)
+    axios.post('/api/about-me', requestBody)
       .then(response => {
         console.log(response.data)
       })
