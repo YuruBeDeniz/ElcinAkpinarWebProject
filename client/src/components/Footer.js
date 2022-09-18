@@ -109,7 +109,7 @@ export function Footer() {
             </a>
             {/* ------------------------------- EMAIL ---------------------------- */}
             <a
-              href="#!"
+              href="/contact"
               type="button"
               target="_blank"
               rel="noopener noreferrer"
