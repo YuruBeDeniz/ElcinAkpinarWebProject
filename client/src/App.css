@@ -55,3 +55,13 @@
   width: 80%;
   position: absolute;
 }
+
+/* <--------------- bg-picture --------------> */
+
+.bg-picture {
+  margin-top: -12px;
+  background-image: url("./images/home-background.jpg");
+  height: 870px;
+  background-size: cover;
+  background-position: center;
+}
