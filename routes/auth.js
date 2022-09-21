@@ -6,7 +6,7 @@ const saltRounds = 10;
 const { isAuthenticated } = require('../middlewares/jwt'); 
 
 router.post('/signup', (req, res, next) => {
-    console.log('signup req.body: ', req.body)
+    //console.log('signup req.body: ', req.body)
     const {email, password, name} = req.body
     if (email === '' || password === '' || name === '') {
 		res.status(400).json({ message: 'Provide email, password and name' })
