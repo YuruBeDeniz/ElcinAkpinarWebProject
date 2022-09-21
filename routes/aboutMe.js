@@ -1,7 +1,7 @@
 /* const router = require("express").Router();
 const AboutMe = require('../models/AboutMe');
 
-router.post('/about-me', (req, res, next) => {
+router.post('/', (req, res, next) => {
     const { aboutMe } = req.body;
     console.log(req.body)
     AboutMe.create({textBody: aboutMe})
