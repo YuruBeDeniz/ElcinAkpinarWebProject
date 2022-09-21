@@ -37,7 +37,7 @@ export default function AboutMe() {
         Thus, I assumed the responsibility of the visual production of the music I made.
         <br />
         <br />
-        Now, I continue to produce in the fields of sculpture, DJ, electronic dance music and vocal music, visual/digital art, sculpture and plastic make up.
+        Now I continue to produce in the fields of sculpture, DJ, electronic dance music and vocal music, visual/digital art, sculpture and plastic make up.
         
         <br />
         <br />   
