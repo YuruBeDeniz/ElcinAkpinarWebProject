@@ -30,7 +30,7 @@ router.post('/signup', (req, res, next) => {
                        .then(createdUser => {
                         const {email, name, _id} = createdUser;
                         const user = { email, name, _id};
-                        console.log('response control: ', res)
+                        //console.log('response control: ', res)
                         res.status(201).json({user: user})
                        })
                        .catch(err => {
