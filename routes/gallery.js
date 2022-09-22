@@ -28,7 +28,7 @@ router.post("/add-picture", uploader.single("gallery"), (req, res, next) => {
 });
 
 router.post("/delete/:id", (req, res, next) => {
-  console.log(req.params.id);
+  //console.log(req.params.id);
   Gallery.findByIdAndDelete({ _id: req.params.id })
     .then((data) => {
       if (data.imgUrl) {
