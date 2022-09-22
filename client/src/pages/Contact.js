@@ -20,8 +20,9 @@ export default function Contact() {
     const handleSubmit = e => {
       e.preventDefault();
       const requestBody = {name, email, subject, message};
-      axios.post('/api/send-email', requestBody)
+      axios.post('/api/email/send-email', requestBody)
         .then(response => {
+          console.log(response)
           navigate('/contact');
         })
         .catch((err) => {
@@ -35,42 +36,67 @@ return (
     <form onSubmit={handleSubmit} className="w-full max-w-lg mb-36 ml-12">
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" 
+            htmlFor="grid-first-name">
             Name
           </label>
-          <input value={name} onChange={handleName} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Name" />
-          <p className="text-red-500 text-xs italic">Please fill out this field.</p>
+          <input 
+            value={name} 
+            onChange={handleName} 
+            type="text" 
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+            id="grid-first-name" 
+            placeholder="Name" />
+          {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
         </div>
       </div>
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" 
+            htmlFor="grid-first-name">
             Subject
           </label>
-          <input value={subject} onChange={handleSubject} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Subject" />
-          <p className="text-red-500 text-xs italic">Please fill out this field.</p>
+          <input 
+            value={subject} 
+            onChange={handleSubject} 
+            type="text" 
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+            id="grid-first-name" 
+            placeholder="Subject" />
+          {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
         </div>
       </div>
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full px-3">
-          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" 
+            htmlFor="grid-password">
             E-mail
           </label>
-          <input value={email} onChange={handleEmail} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" />
-          <p className="text-gray-600 text-xs italic">Some tips - as long as needed</p>
+          <input value={email} 
+            onChange={handleEmail} 
+            type="email" 
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+            id="email"/>
+          {/* <p className="text-gray-600 text-xs italic">Some tips - as long as needed</p> */}
         </div>
       </div>
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full px-3">
-          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" 
+            htmlFor="grid-password">
             Message
           </label>
-          <textarea value={message} onChange={handleMessage} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
+          <textarea 
+            value={message} 
+            onChange={handleMessage} 
+            type="text" 
+            className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" 
+            id="message"></textarea>
         </div>
       </div>
       <div className="md:flex md:items-center">
         <div className="md:w-1/3">
-          <button className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="subnit">
+          <button className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
             Send
           </button>
         </div>
