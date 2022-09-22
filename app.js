@@ -25,6 +25,9 @@ app.use("/api/gallery", gallery);
 const auth = require("./routes/auth");
 app.use("/api/auth", auth);
 
+const nodemailer = require("./routes/nodemailer");
+app.use("/api/email", nodemailer);
+
 /* const aboutMe = require("./routes/aboutMe");
 app.use("/api/about-me", aboutMe); */
 
