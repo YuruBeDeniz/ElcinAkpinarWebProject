@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { model } = require("mongoose");
-const Gallery = require("../models/gallery");
+const Gallery = require("../models/Gallery");
 const { uploader, cloudinary } = require("../config/cloudinary");
 
 router.get("/", (req, res, next) => {
