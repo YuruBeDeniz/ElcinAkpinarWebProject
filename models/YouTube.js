@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const youTubeSchema = new Schema(
   {
-    link: {
+    youTubeLink: {
       type: String
     }
   }

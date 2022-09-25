@@ -28,6 +28,9 @@ app.use("/api/auth", auth);
 const nodemailer = require("./routes/nodemailer");
 app.use("/api/email", nodemailer);
 
+/* const videos = require("./routes/videos");
+app.use("/api/videos", videos); */
+
 /* const aboutMe = require("./routes/aboutMe");
 app.use("/api/about-me", aboutMe); */
 
