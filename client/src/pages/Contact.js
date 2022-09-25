@@ -23,7 +23,7 @@ export default function Contact() {
       axios.post('/api/email/send-email', requestBody)
         .then(response => {
           console.log(response)
-          navigate('/contact');
+          navigate('/');
         })
         .catch((err) => {
           const errorDescription = err.response.data.message;

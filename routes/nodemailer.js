@@ -4,6 +4,7 @@ require("dotenv/config");
 
 router.post('/send-email', (req, res, next) => {
     let { name, email, subject, message} = req.body;
+  
     let transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -21,7 +22,8 @@ router.post('/send-email', (req, res, next) => {
       html: `You recived a message: <b>${message}</b> from ${email}`,
     })
     .then(info => console.log(info))
-    .catch((error) => console.log("Error Occurs!"));  
+    .catch((error) => console.log("Error Occurs!")); 
+  
 })
 
 
