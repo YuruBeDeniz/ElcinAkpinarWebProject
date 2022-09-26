@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import axios from 'axios';
 
-export default function AddVideo() {
+export default function AddVideo(props) {
   const [youTubeURL, setYouTubeURL] = useState('');
   const [errorMessage, setErrorMessage] = useState(undefined);
 
