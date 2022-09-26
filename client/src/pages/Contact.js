@@ -44,7 +44,7 @@ return (
             value={name} 
             onChange={handleName} 
             type="text" 
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
             id="grid-first-name" 
             placeholder="Name" />
           {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
@@ -60,7 +60,7 @@ return (
             value={subject} 
             onChange={handleSubject} 
             type="text" 
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
             id="grid-first-name" 
             placeholder="Subject" />
           {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
@@ -76,7 +76,9 @@ return (
             onChange={handleEmail} 
             type="email" 
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-            id="email"/>
+            id="email"
+            placeholder="Email"
+            />
           {/* <p className="text-gray-600 text-xs italic">Some tips - as long as needed</p> */}
         </div>
       </div>
@@ -91,7 +93,8 @@ return (
             onChange={handleMessage} 
             type="text" 
             className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" 
-            id="message"></textarea>
+            id="message"
+            placeholder="Your message"></textarea>
         </div>
       </div>
       <div className="md:flex md:items-center">
