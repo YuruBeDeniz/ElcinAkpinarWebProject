@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
-export default function Addvideo() {
+export default function Addvideo(props) {
     const [youTubeLink, setYouTubeLink] = useState('');
     const [errorMessage, setErrorMessage] = useState(undefined);
 
@@ -14,10 +14,11 @@ export default function Addvideo() {
         e.preventDefault();
         const requestBody = { youTubeLink };
 
-        axios.post('/api/add-videos', requestBody)
+        axios.post('/api/videos', requestBody)
             .then((response) => {
                 console.log(response)
                 navigate('/videos');
+                setYouTubeLink('');
             })
             .catch(error => {
                 const errorDescription = error.response.data.message;
@@ -30,7 +31,7 @@ export default function Addvideo() {
     <form  onSubmit={handleSubmit} className="w-full max-w-lg mb-36 ml-12">
     <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full px-3">
-          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
             Link
           </label>
           <textarea value={youTubeLink} onChange={handleYouTubeLink} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>

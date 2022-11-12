@@ -5,6 +5,8 @@ require("dotenv/config");
 // ℹ️ Connects to the database
 require("./db");
 
+const { isAuthenticated } = require("./middlewares/jwt");
+
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
 const express = require("express");
@@ -28,8 +30,8 @@ app.use("/api/auth", auth);
 const nodemailer = require("./routes/nodemailer");
 app.use("/api/email", nodemailer);
 
-/* const videos = require("./routes/videos");
-app.use("/api/videos", videos); */
+const videos = require("./routes/videos");
+app.use("/api/videos", videos);
 
 /* const aboutMe = require("./routes/aboutMe");
 app.use("/api/about-me", aboutMe); */
