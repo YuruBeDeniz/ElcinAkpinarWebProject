@@ -1,20 +1,21 @@
 const router = require("express").Router();
 const YouTube = require('../models/YouTube');
 
-router.post('/', (req, res, next) => {
-    const { youTubeURL } = req.body;
+router.post('/add-video', (req, res, next) => {
+    const { youTubeLink } = req.body;
+    console.log('request body: ', req.body)
 
-    if(youTubeURL === null) {
+    if(youTubeLink === null) {
         res.status(400).json({message: 'Provide a YouTube link'})
     }
 
     const youTubeSrcRegex = /www\.youtube\.com\/watch\?v\=...........$/
-    if (!youTubeSrcRegex.test(youTubeURL)) {
+    if (!youTubeSrcRegex.test(youTubeLink)) {
       res.status(400).json({ message: 'Provide a valid YouTube link.' });
       return;
     }
 
-    YouTube.create({ youTubeLink: youTubeURL})
+    YouTube.create({ youTubeLink: youTubeLink})
         .then(createdObj => {
             console.log('created Youtube link: ', createdObj)
             const { youTubeLink, _id } = createdObj
