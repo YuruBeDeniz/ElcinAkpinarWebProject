@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/login" element={<LoginPopup />} />
           <Route path="/signup" element={<SignUpPopup />} />
           <Route path="/gallery" element={<ShowGallery />} />
-          <Route path="/gallery/add-picture" element={<AddPicture />} />
+          <Route path="/gallery/add-photo" element={<AddPicture />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/videos/add-video" element={<AddVideo />} />

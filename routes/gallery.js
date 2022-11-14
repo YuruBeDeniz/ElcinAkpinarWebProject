@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
   });
 });
 
-router.post("/add-picture", uploader.single("gallery"), (req, res, next) => {
+router.post("/add-photo", uploader.single("gallery"), (req, res, next) => {
   const { imgUrl, publicId } = req.body;
   Gallery.create({
     imgUrl,
