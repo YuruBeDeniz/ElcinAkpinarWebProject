@@ -9,7 +9,7 @@ import SignUpPopup from "./components/SignUpPopup";
 import { ShowGallery, AddPicture, Footer } from "./components";
 import Videos from "./pages/Videos";
 import Contact from "./pages/Contact";
-import Addvideo from "./components/Videos/Addvideo";
+import AddVideo from "./components/Videos/AddVideo";
 
 export default function App() {
   return (
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/gallery/add-picture" element={<AddPicture />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/videos/add-video" element={<Addvideo />} />
+          <Route path="/videos/add-video" element={<AddVideo />} />
         </Routes>
         <Footer />
       </div>
