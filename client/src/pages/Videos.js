@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-//import YoutubeEmbed from '../components/Videos/YoutubeEmbed';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/auth';
 import OneYouTubeVideo from '../components/Videos/OneYouTubeVideo';

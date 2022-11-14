@@ -3,7 +3,7 @@ const YouTube = require('../models/YouTube');
 
 router.post('/add-video', (req, res, next) => {
     const { youTubeLink } = req.body;
-    console.log('request body: ', req.body)
+    //console.log('request body: ', req.body)
 
     if(youTubeLink === null) {
         res.status(400).json({message: 'Provide a YouTube link'})
@@ -17,7 +17,7 @@ router.post('/add-video', (req, res, next) => {
 
     YouTube.create({ youTubeLink: youTubeLink})
         .then(createdObj => {
-            console.log('created Youtube link: ', createdObj)
+            //console.log('created Youtube link: ', createdObj)
             const { youTubeLink, _id } = createdObj
             const youTube = { youTubeLink, _id }
             res.status(201).json({youTube: youTube})
@@ -38,6 +38,16 @@ router.get('/', (req, res, next) => {
         res.json(err)
       });
   });
+
+
+router.delete('/delete/:id', (req, res, next) => {
+  //console.log('params: ', req.params.id);
+  YouTube.findByIdAndRemove({_id: req.params.id})
+    .then(() => {
+      res.status(200).json({message: 'Video deleted'})
+    })
+    .catch(err => next(err))
+})
 
 module.exports = router;
 
