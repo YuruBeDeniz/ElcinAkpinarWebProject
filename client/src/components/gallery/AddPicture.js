@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axios from "axios";
-// import { response } from "express";
-// import { ShowGallery } from "./ShowGallery";
 import Swal from "sweetalert2";
 
 export function AddPicture() {
   const [image, setImage] = useState("");
   const [setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     console.log("esto es EEEEEEE:", image);
@@ -30,7 +31,7 @@ export function AddPicture() {
         };
         if (data.url.length > 1) {
           axios
-            .post("/api/gallery/add-picture", requestBody)
+            .post("/api/gallery/add-photo", requestBody)
             .then((response) => {
               if (response) {
                 Swal.fire({
@@ -40,6 +41,7 @@ export function AddPicture() {
                   timer: 500,
                 });
               }
+              navigate('/gallery')
             });
         }
       })
