@@ -27,10 +27,12 @@ export default function Videos() {
     <div>
       {videos?.map((video) => (<OneYouTubeVideo key={video._id} video={video} />))}
     </div>
-    
+    {isLoggedIn?
+    <div className="flex justify-center">
     <div className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mb-36'>
-    {isLoggedIn? <Link to='/videos/add-video' >Add Video</Link> : null}
+     <Link to='/videos/add-video' >Add Video</Link> 
     </div>
+    </div> : null}
     <br />
     </div>
   )

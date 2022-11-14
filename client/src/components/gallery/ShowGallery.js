@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import { AuthContext } from "../../context/auth";
 import { DeletePicture } from "./DeletePicture";
 
 export function ShowGallery() {
-  const { isLoggedIn, logoutUser } = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
 
   const [gallery, setGallery] = useState([]);
 
@@ -42,8 +43,15 @@ export function ShowGallery() {
           </div>
         </section>
       ) : (
-        ""
+        null
       )}
+
+    {isLoggedIn ? 
+    <div className="flex justify-center">
+    <div className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 w-32 border border-gray-400 rounded shadow flex justify-center mb-36'>
+      <Link to='/gallery/add-photo'>Add photo</Link>
+    </div>
+    </div> : null}
     </>
   );
 }
