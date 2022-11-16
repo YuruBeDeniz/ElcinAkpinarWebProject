@@ -33,8 +33,8 @@ app.use("/api/email", nodemailer);
 const videos = require("./routes/videos");
 app.use("/api/videos", videos);
 
-/* const aboutMe = require("./routes/aboutMe");
-app.use("/api/about-me", aboutMe); */
+const aboutMe = require("./routes/aboutMe");
+app.use("/api/about-me", aboutMe);
 
 const path = require('path');
 app.use(express.static(path.join(__dirname, "/client/build")));
