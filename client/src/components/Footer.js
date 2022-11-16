@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/auth";
+import { ImSoundcloud } from 'react-icons/im';
 
 export function Footer() {
   const { isLoggedIn, logoutUser } = useContext(AuthContext);
@@ -72,10 +73,11 @@ export function Footer() {
               >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="6"
+                height="6"
                 fill="currentColor"
-                data-icon="bi bi-soundwave"
+                data-icon={<ImSoundcloud value={{color: 'white'}} />}
+                //data-icon="bi bi-soundwave"
                 className="w-4 h-full mx-auto"
                 viewBox="0 0 16 16"
               >

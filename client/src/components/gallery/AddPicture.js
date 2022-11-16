@@ -11,11 +11,9 @@ export function AddPicture() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    console.log("esto es EEEEEEE:", image);
     e.preventDefault();
     const data = new FormData();
     data.append("file", image);
-    console.log("ESTO ES DATATA:", data);
     data.append("upload_preset", "elcinTurca");
     data.append("cloud_name", "thusspokedata");
     fetch("https://api.cloudinary.com/v1_1/thusspokedata/image/upload", {
