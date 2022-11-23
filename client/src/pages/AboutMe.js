@@ -3,6 +3,7 @@ import elcin from '../images/elcin.jpeg';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/auth';
 import axios from 'axios';
+import OneAboutmeCard from '../components/Aboutme/OneAboutmeCard';
 
 
 export default function AboutMe(props) {
@@ -31,7 +32,7 @@ export default function AboutMe(props) {
     <div className='mx-60 my-5 leading-loose text-justify'>
    
     <div>
-      {aboutMes?.map((aboutMe, i) => (<p key={aboutMe._id}>{aboutMe.textBody}</p>))}
+      {aboutMes?.map((aboutMe) => (<OneAboutmeCard key={aboutMe._id} aboutMe={aboutMe} />))}
     </div>
 
     </div>
