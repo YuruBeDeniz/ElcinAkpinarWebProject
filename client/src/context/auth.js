@@ -16,7 +16,7 @@ function AuthProviderWrapper(props) {
 	};
 
     const verifyStoredToken = () => {
-		const storedToken = localStorage.getItem('authToken')
+		const storedToken = localStorage.getItem('authToken');
 		if (storedToken) {
 			return axios.get(
                 '/api/auth/verify',

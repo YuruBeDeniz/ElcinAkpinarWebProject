@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { create } = require("../models/AboutMe");
 const AboutMe = require('../models/AboutMe');
 
 router.post('/create-about-me', (req, res, next) => {
@@ -29,5 +28,14 @@ router.get('/', (req, res, next) => {
         res.json(err)
       });
   });
+
+
+  router.delete('/delete/:id', (req, res, next) => {
+    AboutMe.findByIdAndRemove({_id: req.params.id})
+      .then(() => {
+        res.status(200).json({message: 'A part of aboutMe is deleted'})
+      })
+      .catch(err => next(err))
+  }) 
 
 module.exports = router;

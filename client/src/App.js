@@ -10,7 +10,8 @@ import { ShowGallery, AddPicture, Footer } from "./components";
 import Videos from "./pages/Videos";
 import Contact from "./pages/Contact";
 import AddVideo from "./components/Videos/AddVideo";
-import CreateAboutMe from './components/CreateAboutMe'
+import CreateAboutMe from './components/Aboutme/CreateAboutMe';
+import UpdateAboutme from "./components/Aboutme/UpdateAboutme";
 
 export default function App() {
   return (
@@ -20,7 +21,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-me" element={<AboutMe />} />
-          <Route path="create-about-me" element={<CreateAboutMe />} />
+          <Route path="/create-about-me" element={<CreateAboutMe />} />
+          {/* <Route path="/update-about-me" element={<UpdateAboutme />} /> */}
           <Route path="/login" element={<LoginPopup />} />
           <Route path="/signup" element={<SignUpPopup />} />
           <Route path="/gallery" element={<ShowGallery />} />
