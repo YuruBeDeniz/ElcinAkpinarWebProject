@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/auth';
 
 
+export default function UpdateAboutme() {
+  const { isLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { id } = useParams();
+  console.log(id);
 
-export default function UpdateAboutme({id}) {
   const [aboutMe, setAboutMe] = useState('');
 
   useEffect(() => {
@@ -23,7 +29,8 @@ export default function UpdateAboutme({id}) {
       const requestBody = {aboutMe};
       axios.put(`/api/about-me/${id}`, requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then((response) => {
-        console.log(response)
+        console.log(response);
+        navigate('/about-me')
       })
       .catch(err => console.log(err));
   }
