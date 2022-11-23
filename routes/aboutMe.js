@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const AboutMe = require('../models/AboutMe');
+const { isAuthenticated } = require('../middlewares/jwt')
 
 router.post('/create-about-me', (req, res, next) => {
     const { aboutMe } = req.body;
@@ -30,12 +31,30 @@ router.get('/', (req, res, next) => {
   });
 
 
-  router.delete('/delete/:id', (req, res, next) => {
-    AboutMe.findByIdAndRemove({_id: req.params.id})
-      .then(() => {
-        res.status(200).json({message: 'A part of aboutMe is deleted'})
-      })
-      .catch(err => next(err))
-  }) 
+router.get('/:id', (req, res, next) => {
+  const aboutMeID = req.params.id;
+  AboutMe.findById(aboutMeID)
+    .then(aboutMe => {
+      res.status(200).json(aboutMe);
+    })
+    .catch(err => console.log(err));
+})  
+
+router.delete('/delete/:id', (req, res, next) => {
+  AboutMe.findByIdAndRemove({_id: req.params.id})
+    .then(() => {
+      res.status(200).json({message: 'A part of aboutMe is deleted'})
+    })
+    .catch(err => next(err))
+});
+  
+router.put('/:id', isAuthenticated, (req, res, next) => {
+  const { aboutMe } = req.body;
+  AboutMe.findByIdAndUpdate(req.params.id, {textBody: aboutMe}, {new: true})
+    .then(aboutMe => {
+      res.status(200).json(aboutMe);
+    })
+    .catch(err => console.log(err));
+})  
 
 module.exports = router;
