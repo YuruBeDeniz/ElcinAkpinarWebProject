@@ -29,6 +29,10 @@ export default function Contact() {
           const errorDescription = err.response.data.message;
           setErrorMessage(errorDescription);
         })
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");    
     }
 
 return (
