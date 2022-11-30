@@ -28,11 +28,11 @@ export default function Navbar({ fixed }) {
             }
             id="example-navbar-danger"
           >
-            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+            {/* <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
                 <Link className="fab fa-facebook-square text-lg leading-lg text-white opacity-75" to='/sagavanga'><span className="ml-2">SagaVanga</span></Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </nav>
