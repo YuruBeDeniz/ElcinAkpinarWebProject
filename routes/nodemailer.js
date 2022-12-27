@@ -10,7 +10,7 @@ router.post('/send-email', (req, res, next) => {
         service: 'Gmail',
         auth: {
           user: process.env.EMAIL,
-          pass: process.env.EMAILPASSWORD, 
+          pass: process.env.APPPASSWORD, 
         }
       });
       
@@ -20,7 +20,7 @@ router.post('/send-email', (req, res, next) => {
       name: name,
       subject: subject,
       text: message,
-      html: `You recived a message: <b>${message}</b> from ${email}`,
+      html: `You recived a message: <b>${message}</b> from ${name}, ${email}`,
     })
     //.then(info => console.log(info))
     .catch((error) => console.log("Error Occurs!")); 
