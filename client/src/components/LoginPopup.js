@@ -82,7 +82,7 @@ export default function LoginPopup() {
                     {" "}
                     Don't have an account?{" "}
                     <Link
-                        to="/signup"
+                        to="/elcin-signup"
                         className="font-medium text-bg-gray-900 hover:underline"
                     >
                         Sign up

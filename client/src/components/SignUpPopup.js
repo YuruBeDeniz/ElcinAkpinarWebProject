@@ -109,7 +109,7 @@ export default function SignUpPopup() {
                         <div className="flex items-center justify-end mt-4">
                             <Link
                                 className="text-sm text-gray-600 underline hover:text-gray-900"
-                                to="/login"
+                                to="/elcin-login"
                             >
                                 Already have an account?
                             </Link>
@@ -118,7 +118,7 @@ export default function SignUpPopup() {
                                 className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
                             >
                                 Sign Up
-                            </button> : <Link to='/signup'>Passwords don't match</Link>}
+                            </button> : <Link to='/elcin-signup'>Passwords don't match</Link>}
                         </div>
                     </form>
 

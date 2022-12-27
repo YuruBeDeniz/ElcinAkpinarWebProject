@@ -22,8 +22,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about-me" element={<AboutMe />} />
           <Route path="/create-about-me" element={<CreateAboutMe />} />
-          <Route path="/login" element={<LoginPopup />} />
-          <Route path="/signup" element={<SignUpPopup />} />
+          <Route path="/elcin-login" element={<LoginPopup />} />
+          <Route path="/elcin-signup" element={<SignUpPopup />} />
           <Route path="/gallery" element={<ShowGallery />} />
           <Route path="/gallery/add-photo" element={<AddPicture />} />
           <Route path="/videos" element={<Videos />} />
