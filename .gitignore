@@ -9,3 +9,6 @@ npm-debug.log
 .env
 
 
+pnpm-lock.yaml
+build/
+

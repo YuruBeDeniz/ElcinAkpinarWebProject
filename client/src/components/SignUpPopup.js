@@ -16,7 +16,7 @@ export default function SignUpPopup() {
       axios.post('/api/auth/signup', requestBody)
       .then(response => {
         //console.log('response from backend: ', response)
-        navigate('/login');
+        navigate('/elcin-login');
       })
       .catch(err => {
         const errorDescription = err.response.data.message;
