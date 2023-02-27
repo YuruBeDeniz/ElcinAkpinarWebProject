@@ -29,7 +29,7 @@ export default function AboutMe(props) {
     <div>
      <div className='flex flex-col items-center mb-48'>
     <div className='w-80'><img src={elcin} alt='portre' /></div>
-    <div className='mx-60 my-5 leading-loose text-justify'>
+    <div className='mx-20 leading-loose text-justify'>
    
     <div>
       {aboutMes?.map((aboutMe) => (<OneAboutmeCard key={aboutMe._id} aboutMe={aboutMe} />))}
