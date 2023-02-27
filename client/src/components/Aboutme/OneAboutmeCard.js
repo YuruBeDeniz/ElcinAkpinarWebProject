@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import { AuthContext } from '../../context/auth';
-import { Link } from 'react-router-dom';
 import DeleteAboutme from './DeleteAboutme';
 
 export default function OneAboutmeCard({aboutMe}) {
