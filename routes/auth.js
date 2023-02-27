@@ -15,7 +15,7 @@ router.post('/signup', (req, res, next) => {
 	if (password.length < 4) {
 		res.status(400).json({ message: 'Password has to be 4 chars min' })
 		return
-	};
+	}; 
     User.findOne({ email })
         .then(foundUser => {
             if(foundUser){
